@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useState, } from "react";
+import { useState, useEffect } from "react";
 import "./Style/Film.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card, Button, Navbar, Container} from"react-bootstrap"
@@ -20,11 +20,11 @@ export default function App() {
     setInputId("");
   }
 
-  // useEffect(() => {
-  //   fetch(`https://jsonplaceholder.typicode.com/posts`)
-  //     .then(response => response.json())
-  //     .then(json => setItems(json))
-  // }, [])
+  useEffect(() => {
+    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=3fa6cf92`)
+      .then(response => response.json())
+      .then(json => setItems(json))
+  }, [])
 
   let arr = []
   arr.push(items)
