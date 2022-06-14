@@ -25,7 +25,7 @@ export default function App() {
       .then((response) => response.json())
       .then((json) => setItem(json));
   }, []);
-
+  console.log("BERHASIL")
   return (
     <div className="App">
       <Navbar bg="dark" variant="dark" width="10%" height="10%">
